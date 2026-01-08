@@ -42,28 +42,11 @@ A Spring Boot application built with Java and Gradle.
 
 Once the application is running, you can access:
 
-- **API Health Check**: http://localhost:8080/api/health
 - **H2 Console**: http://localhost:8080/h2-console
   - JDBC URL: `jdbc:h2:mem:knowledgehubdb`
   - Username: `sa`
   - Password: (leave empty)
 
-## Project Structure
-
-```
-.
-├── src/
-│   ├── main/
-│   │   ├── java/com/knowledgehub/
-│   │   │   ├── KnowledgeHubApplication.java
-│   │   │   └── controller/
-│   │   │       └── HealthController.java
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/com/knowledgehub/
-└── build.gradle
-```
 
 ## Technologies Used
 
@@ -79,6 +62,12 @@ Once the application is running, you can access:
 
 The application uses H2 in-memory database for development. You can configure a different database by updating `application.properties`.
 
-## License
+## Configuration 
+To protect your security, this project does not include a hardcoded OpenAI API key. To run the application, you must configure your own key:
 
-This project is open source and available under the MIT License.
+Locate the properties file: Navigate to src/main/resources/application.properties.
+
+Update the API Key, replace OPENAI_API_KEY with you key.
+
+Find the following line:
+spring.ai.openai.api-key=OPENAI_API_KEY
